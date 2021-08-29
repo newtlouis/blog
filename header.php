@@ -1,19 +1,4 @@
-<?php
-function nav_item (string $link, string $titre): string
-{
-  $class = 'nav-link';
-  if($_SERVER['SCRIPT_NAME'] === $link){
-    $class = $class . ' active';
-  }
 
-  return '<li class="nav_item">
-            <a class="' . $class . '" href="'.$link.'"> ' . $titre . '</a>
-          </li>';
-}
-?>
-<li class="nav-item">
-  <a class="nav-link <?php if ($_SERVER['SCRIPT_NAME'] === "/index.php") : ?> active <?php endif; ?>" href="index.php">Accueil</a>
-  </li>
 
 <!doctype html>
 <html lang="en" class="h-100">
@@ -84,8 +69,7 @@ function nav_item (string $link, string $titre): string
       </button>
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav me-auto mb-2 mb-md-0">
-          <?= nav_item('/index.php','Accueil'); ?>
-          <?= nav_item('/contact.php', 'Contact'); ?>
+          <?php require 'menu.php'; ?>
         </ul>
         <form class="d-flex">
           <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">

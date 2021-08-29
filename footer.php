@@ -1,7 +1,16 @@
 <footer class="footer mt-auto py-3 bg-light">
   <div class="container">
-    <span class="text-muted">Place sticky footer content here.</span>
-  </div>
+    <div class="row">
+      <div class="col-md-4"></div>
+      <div class="col-md-4"></div>
+      <div class="col-md-4">
+        <h5>Navigation</h5>
+        <ul class="list-unstyled text-small">
+          <?php require 'menu.php'; ?>
+        </ul>
+      </div>
+    </div>
+</div>
 </footer>
 
 
