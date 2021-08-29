@@ -6,7 +6,7 @@
       <div class="col-md-4">
         <h5>Navigation</h5>
         <ul class="list-unstyled text-small">
-          <?php require 'menu.php'; ?>
+          <?= nav_menu(); ?>
         </ul>
       </div>
     </div>

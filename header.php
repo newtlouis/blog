@@ -1,4 +1,4 @@
-
+<?php require_once 'fonctions.php' ?>
 
 <!doctype html>
 <html lang="en" class="h-100">
@@ -69,7 +69,7 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav me-auto mb-2 mb-md-0">
-          <?php require 'menu.php'; ?>
+          <?= nav_menu('nav_link'); ?>
         </ul>
         <form class="d-flex">
           <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
