@@ -1,5 +1,8 @@
-
-<?php require 'header.php'; ?>
+<?php 
+$nav = "index";
+$title = "page d'accueil";
+require 'header.php'; 
+?>
 
 <!-- Begin page content -->
 <main class="flex-shrink-0">

@@ -1,3 +1,20 @@
+<?php
+function nav_item (string $link, string $titre): string
+{
+  $class = 'nav-link';
+  if($_SERVER['SCRIPT_NAME'] === $link){
+    $class = $class . ' active';
+  }
+
+  return '<li class="nav_item">
+            <a class="' . $class . '" href="'.$link.'"> ' . $titre . '</a>
+          </li>';
+}
+?>
+<li class="nav-item">
+  <a class="nav-link <?php if ($_SERVER['SCRIPT_NAME'] === "/index.php") : ?> active <?php endif; ?>" href="index.php">Accueil</a>
+  </li>
+
 <!doctype html>
 <html lang="en" class="h-100">
   <head>
@@ -6,7 +23,18 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.87.0">
-    <title>Sticky Footer Navbar Template · Bootstrap v5.1</title>
+   
+
+    <title><?php if (isset($title)) {echo $title;} else {echo 'Mon site';} ?></title> -->
+    <?php /*
+    <title>
+      <?php if (isset($title)): ?>
+        <?php echo $title;?>
+      <?php else: ?>
+        Mon site
+      <?php endif ?>
+    </title>
+    */ ?> 
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/sticky-footer-navbar/">
 
@@ -56,15 +84,8 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav me-auto mb-2 mb-md-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="index.php">Accueil</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="contact.php">Contact</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-          </li>
+          <?= nav_item('/index.php','Accueil'); ?>
+          <?= nav_item('/contact.php', 'Contact'); ?>
         </ul>
         <form class="d-flex">
           <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
