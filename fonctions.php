@@ -50,10 +50,52 @@ function radio( string $name , string $value , array $data): string {
     return <<<HTML
         <input type="radio" name="$name" value="$value" $attribute>
         HTML;
+};
+
+// Creneaux page contact
+function creneaux_html(array $creneaux): string{
+    $phrases = [];
+    if (empty($creneaux)){
+        return 'Fermé';
+    }
+    else{
+        foreach ($creneaux as $creneau){
+            $phrases[] = "de <strong> $creneau[0]h</strong> à <strong>$creneau[1]h</strong>";
+        }
+        return 'Ouvert ' . implode(' et ' , $phrases);
+    }
+    
+};
+// Magasin ouvert ou fermé ?
+function is_open(array $creneaux){
+    $today = "";
+    foreach(JOURS as $k => $jour){
+        if((int)date('N') === ($k + 1)){
+            $today = JOURS[$k];
+        }
+    }
+    // return $creneaux[$today][0][0];
+   
+    if(((int)date('H')+2) > $creneaux[$today][0][0] && ((int)date('H')+2) < $creneaux[$today][0][1] || ((int)date('H')+2) > $creneaux[$today][1][0] && ((int)date('H')+2) < $creneaux[$today][1][1] ){
+        return <<<HTML
+        <div class="alert alert-success"> Le glacier est ouvert</div>
+        HTML;
+    }
+    else{
+        return <<<HTML
+        <div class="alert alert-danger"> Le glacier est ouvert</div>
+        HTML;
+    }
+    
+        
+};
+
+// Affichage tableau
+function dump(array $list){
+    echo '<pre>';
+    var_dump($list);
+    echo '</pre>';
 }
-
-// Calcul du prix de la glace
-
 
 ?>
 

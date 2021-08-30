@@ -10,7 +10,7 @@
     <meta name="generator" content="Hugo 0.87.0">
    
 
-    <title><?php if (isset($title)) {echo $title;} else {echo 'Mon site';} ?></title> -->
+    <title><?php if (isset($title)) {echo $title;} else {echo 'Mon site';} ?></title>
     <?php /*
     <title>
       <?php if (isset($title)): ?>
