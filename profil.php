@@ -1,3 +1,5 @@
+<!-- Pour stocker des tableaux, serialize les données et quand on les récupère faire unserialize -->
+
 <?php 
 $nom = null;
 if (!empty($_GET['action']) && $_GET['action'] === 'deconnecter'){

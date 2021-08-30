@@ -25,7 +25,8 @@ function nav_menu ( string $linkClass = ''):string {
         nav_item('/contact.php', 'Contact', $linkClass) .
         nav_item('/jeu.php', 'Jeu', $linkClass).
         nav_item('/newsletter.php', 'Newsletter', $linkClass).
-        nav_item('/profil.php', 'Profil', $linkClass);
+        nav_item('/profil.php', 'Profil', $linkClass).
+        nav_item('/autorisation.php', 'Autorisation', $linkClass);
 
 }
 
