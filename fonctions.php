@@ -89,10 +89,26 @@ function is_open(array $creneaux){
         return <<<HTML
         <div class="alert alert-danger"> Le glacier est fermé actuellement</div>
         HTML;
-    }
-    
-        
+    }      
 };
+
+// Ajouter vue
+function ajouter_vue(): void{
+    $fichier = dirname(__DIR__) . DIRECTORY_SEPARATOR . 'blog' . DIRECTORY_SEPARATOR . 'data' . DIRECTORY_SEPARATOR . 'compteur';
+    $compteur = 1;
+    if (file_exists($fichier)){
+        $compteur = (int)file_get_contents($fichier);
+        $compteur++;
+    }
+    file_put_contents($fichier , $compteur);
+};
+
+// Nombre vues
+function nombre_vues(): string {
+    $fichier = dirname(__DIR__) . DIRECTORY_SEPARATOR . 'blog' . DIRECTORY_SEPARATOR . 'data' . DIRECTORY_SEPARATOR . 'compteur';
+    return file_get_contents($fichier);
+}
+
 
 // Affichage tableau
 function dump(array $list){
