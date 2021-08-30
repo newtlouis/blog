@@ -23,7 +23,10 @@ function nav_menu ( string $linkClass = ''):string {
     return
         nav_item('/index.php','Accueil', $linkClass) .
         nav_item('/contact.php', 'Contact', $linkClass) .
-        nav_item('/jeu.php', 'Jeu', $linkClass);
+        nav_item('/jeu.php', 'Jeu', $linkClass).
+        nav_item('/newsletter.php', 'Newsletter', $linkClass).
+        nav_item('/profil.php', 'Profil', $linkClass);
+
 }
 
 
@@ -78,12 +81,12 @@ function is_open(array $creneaux){
    
     if(((int)date('H')+2) > $creneaux[$today][0][0] && ((int)date('H')+2) < $creneaux[$today][0][1] || ((int)date('H')+2) > $creneaux[$today][1][0] && ((int)date('H')+2) < $creneaux[$today][1][1] ){
         return <<<HTML
-        <div class="alert alert-success"> Le glacier est ouvert</div>
+        <div class="alert alert-success"> Le glacier est ouvert actuellement</div>
         HTML;
     }
     else{
         return <<<HTML
-        <div class="alert alert-danger"> Le glacier est ouvert</div>
+        <div class="alert alert-danger"> Le glacier est fermé actuellement</div>
         HTML;
     }
     

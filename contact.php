@@ -9,12 +9,12 @@ require_once 'config.php';
   ?>
 
 <div class="row">
-    <div class="col-md-8">
+    <div class="col-md-6">
         <h2>Nous contacter</h2>
         <p>Blablabla</p>
     </div>
 
-    <div class="col-md-4">
+    <div class="col-md-6">
         <h2>Horaires d'ouverture</h2>
 
         <?= is_open(CRENEAUX) ?>
@@ -24,6 +24,8 @@ require_once 'config.php';
             <?php endforeach ?>
             
         </ul>
+
+        
         
     </div>
 </div>
