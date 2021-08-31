@@ -1,7 +1,10 @@
+<br><br><br>
 <?php 
 $nav = "index";
 $title = "page d'accueil";
 require 'header.php'; 
+// force_connexion ();
+
 ?>
 
 <!-- Begin page content -->

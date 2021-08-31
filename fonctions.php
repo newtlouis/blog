@@ -1,6 +1,21 @@
 
 <?php
 
+// LOGIN
+function est_connecte () : bool {
+    if ( session_status === PHP_SESSION_NONE ){
+        session_start();
+    }
+    return !empty($_SESSION['connecte']);
+}
+
+function force_connexion (): void {
+    if( !est_connecte() ){
+        header('Location : /login.php');
+        exit();
+    }
+}
+
 // HEADER
 function nav_item (string $link, string $titre, string $linkClass = ''): string
  {
@@ -26,7 +41,8 @@ function nav_menu ( string $linkClass = ''):string {
         nav_item('/jeu.php', 'Jeu', $linkClass).
         nav_item('/newsletter.php', 'Newsletter', $linkClass).
         nav_item('/profil.php', 'Profil', $linkClass).
-        nav_item('/autorisation.php', 'Autorisation', $linkClass);
+        nav_item('/autorisation.php', 'Autorisation', $linkClass).
+        nav_item('/login.php', 'Login', $linkClass);
 
 }
 
